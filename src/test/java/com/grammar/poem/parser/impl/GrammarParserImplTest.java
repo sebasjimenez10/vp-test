@@ -4,6 +4,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -20,7 +21,7 @@ public class GrammarParserImplTest {
 	private List<String> expectedRuleNames;
 	
 	@Test
-	public void test(){
+	public void test() throws IOException{
 		// Arrange
 		expectedRuleNames = new ArrayList<String>();
 		Collections.addAll(expectedRuleNames, "POEM", "LINE", "ADJECTIVE",
