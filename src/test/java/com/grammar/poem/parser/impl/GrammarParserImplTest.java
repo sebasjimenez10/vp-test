@@ -1,5 +1,9 @@
 package com.grammar.poem.parser.impl;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -10,13 +14,7 @@ import org.junit.Test;
 import com.grammar.poem.model.Grammar;
 import com.grammar.poem.model.Rule;
 
-import junit.framework.TestCase;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.hasItem;
-import static org.junit.Assert.assertThat;
-
-public class GrammarParserImplTest extends TestCase {
+public class GrammarParserImplTest {
 
 	private GrammarParserImpl gpi = new GrammarParserImpl();
 	private List<String> expectedRuleNames;
@@ -35,7 +33,7 @@ public class GrammarParserImplTest extends TestCase {
 		// Assert
 		assertThat( rules.size(), is(equalTo(7)) );
 		for (String rule : rules.keySet()) {
-			assertThat( expectedRuleNames, hasItem(rule) );
+			assertThat( expectedRuleNames.contains(rule), is(equalTo(true)));
 		}
 	}
 	

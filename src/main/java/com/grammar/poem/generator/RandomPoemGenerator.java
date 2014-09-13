@@ -13,7 +13,12 @@ public class RandomPoemGenerator {
 		
 		Rule rootRule = grammar.getRules().get(grammar.getRootRule());
 		
-		List<List<String>> evaluables = rootRule.getEvaluables();
+		printKeywordOrWord(rootRule, grammar);
+	}
+	
+	private static void printKeywordOrWord(Rule rule, Grammar grammar) {
+		
+		List<List<String>> evaluables = rule.getEvaluables();
 		
 		for (List<String> options : evaluables) {
 			
@@ -40,48 +45,10 @@ public class RandomPoemGenerator {
 			}else{
 				// Is a word
 				// Print it
-				System.out.print(opt);
-				
-			}
-			System.out.print(" ");
-		}
-	}
-	
-	private static void printKeywordOrWord(Rule subRule, Grammar grammar) {
-		
-		List<List<String>> evaluables = subRule.getEvaluables();
-		
-		for (List<String> options : evaluables) {
-			
-			// Get a random option
-			int random = randomNumber(0, options.size());
-			String opt = options.get( random );
-			
-			// Let's see if the option is:
-			// 1. word
-			// 2. rule
-			// 3. keyword
-			
-			if( opt.matches("<[A-Z]+>") ){
-				// It's a rule
-				// Call the method to get a keyword or a word
-				Rule subSubRule = grammar.getRules().get(opt.substring(1, opt.length() - 1));
-				printKeywordOrWord(subSubRule, grammar);
-				
-			}else if( opt.matches("\\$[A-Z]+") ){
-				// Is a keyword
-				Keywords valueOf = Grammar.Keywords.valueOf(opt);
-				System.out.print( valueOf.getValue() );
-				
-			}else{
-				// Is a word
-				// Print it
 				System.out.print( opt );
-				
+				System.out.print(" ");
 			}
-			System.out.print(" ");
 		}
-		
 	}
 
 	private static int randomNumber(int min, int max){
