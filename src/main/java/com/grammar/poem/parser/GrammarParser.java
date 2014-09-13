@@ -4,6 +4,11 @@ import java.io.IOException;
 
 import com.grammar.poem.model.Grammar;
 
+/**
+ * 
+ * @author sebastian
+ *
+ */
 public interface GrammarParser {
 
 	/**

@@ -23,14 +23,19 @@ import org.mockito.runners.MockitoJUnitRunner;
 import com.grammar.poem.model.Grammar;
 import com.grammar.poem.model.Rule;
 
+/**
+ * Random Poem Generator Test
+ * @author sebastian
+ *
+ */
 @RunWith(MockitoJUnitRunner.class)
 public class RandomPoemGeneratorTest {
-	
+
 	// Constants
 	private static final String ROOT_RULE_KEY = "ROOTRULE";
 	private static final String ROOT_RULE_NAME = "<ROOTRULE>";
 	private static final String $END = "$END";
-	
+
 	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
 	// Mocks
@@ -38,46 +43,50 @@ public class RandomPoemGeneratorTest {
 	private Grammar grammar;
 	@Mock
 	private Rule rule;
-	
+
 	// Private attrs
 	private Map<String, Rule> rules;
 	private List<List<String>> evaluables;
 	private List<String> options1;
 	private List<String> options2;
-	
+
 	@Before
-	public void setup(){
+	public void setup() {
 		// Changing system out
-		System.setOut(new PrintStream( outContent ));
-		
+		System.setOut(new PrintStream(outContent));
+
 		// Initializing lists, maps and list of lists
 		rules = new HashMap<String, Rule>();
 		options1 = new ArrayList<String>();
 		options2 = new ArrayList<String>();
 		evaluables = new ArrayList<List<String>>();
-		
+
 		// Adding test data
 		rules.put(ROOT_RULE_KEY, rule);
 		Collections.addAll(options1, "word1", "word2");
 		Collections.addAll(options2, ROOT_RULE_NAME, $END);
 		Collections.addAll(evaluables, options1, options2);
-		
+
 		// Configuring mocks
-		doReturn( rules ).when( grammar ).getRules();
-		doReturn( ROOT_RULE_KEY ).when( grammar ).getRootRule();
-		doReturn( evaluables ).when( rule ).getEvaluables();
-		
-	}
-	
-	@After
-	public void cleanUpStreams() {
-	    System.setOut(null);
+		doReturn(rules).when(grammar).getRules();
+		doReturn(ROOT_RULE_KEY).when(grammar).getRootRule();
+		doReturn(evaluables).when(rule).getEvaluables();
+
 	}
 
+	@After
+	public void cleanUpStreams() {
+		System.setOut(null);
+	}
+
+	/**
+	 * Tests that the output matches a regex based on test grammar
+	 */
 	@Test
 	public final void testGeneratePoem() {
 		RandomPoemGenerator.generatePoem(grammar);
-		assertThat( outContent.toString().matches("[word1\\s|word2\\s]+"), is(equalTo(true)) );
+		assertThat(outContent.toString().matches("[word1\\s|word2\\s]+"),
+				is(equalTo(true)));
 	}
 
 }

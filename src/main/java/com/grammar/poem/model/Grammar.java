@@ -3,6 +3,11 @@ package com.grammar.poem.model;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Grammar model. Holds Grammar attributes
+ * @author sebastian
+ *
+ */
 public class Grammar {
 	
 	public enum Keywords {
@@ -20,13 +25,23 @@ public class Grammar {
 		}
 	}
 	
+	/**
+	 * Main or Root rule
+	 */
 	private String rootRule;
 	
+	/**
+	 * Grammar set of rules
+	 */
 	private Map<String, Rule> rules;
 
 	public Grammar(){
 		// Constructor
 	}
+	
+	/*
+	 * Getters and Setters
+	 */
 	
 	public Map<String, Rule> getRules() {
 		if( this.rules == null ){

@@ -11,6 +11,11 @@ import com.grammar.poem.model.Grammar;
 import com.grammar.poem.model.Rule;
 import com.grammar.poem.parser.GrammarParser;
 
+/**
+ * Grammar Parser implementation.
+ * @author sebastian
+ *
+ */
 public class GrammarParserImpl implements GrammarParser {
 
 	@Override
@@ -27,6 +32,7 @@ public class GrammarParserImpl implements GrammarParser {
 		String line;
 		while( (line = br.readLine()) != null ){
 			
+			// New rule
 			Rule rule = new Rule();
 			
 			// 1. The first line is split by ':'
@@ -71,6 +77,11 @@ public class GrammarParserImpl implements GrammarParser {
 		return grammar;
 	}
 
+	/**
+	 * Sets the name of the root rule if it's not set
+	 * @param grammar
+	 * @param ruleName
+	 */
 	private void setRootRuleName(Grammar grammar, String ruleName) {
 		if (grammar.getRootRule() == null){
 			grammar.setRootRule(ruleName);

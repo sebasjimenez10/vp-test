@@ -10,48 +10,59 @@ import com.grammar.poem.model.Grammar;
 import com.grammar.poem.parser.GrammarParser;
 import com.grammar.poem.parser.impl.GrammarParserImpl;
 
+/**
+ * Main class
+ * @author sebastian
+ *
+ */
 public class Main {
 
 	private static final String PRINT_GRAMMAR_OPT = "-g";
 	private static final String FILE_OPT = "-f:";
 	private static final String DEFAULT_FILE_NAME = "poem.grammar";
-	
-	public static void main(String args []) {
-		
+
+	/**
+	 * Main method
+	 * @param args
+	 */
+	public static void main(String args[]) {
+
 		// Initializing grammar parser
 		GrammarParser gp = new GrammarParserImpl();
 		String grammarFileName = DEFAULT_FILE_NAME;
-		
+
 		// Options reading
 		// Getting file if provided
 		List<String> opts = Arrays.asList(args);
 		for (String opt : opts) {
-			if( opt.contains(FILE_OPT) ){
-				grammarFileName = opt.substring( opt.indexOf(":") + 1 );
+			if (opt.contains(FILE_OPT)) {
+				grammarFileName = opt.substring(opt.indexOf(":") + 1);
 			}
 		}
 		// Printing grammar if required
-		if( opts.contains(PRINT_GRAMMAR_OPT) ){
+		if (opts.contains(PRINT_GRAMMAR_OPT)) {
 			try {
 				gp.printGrammar(grammarFileName);
 				System.out.println();
 			} catch (Exception e) {
-				Logger.getLogger( Main.class.getName() ).log(Level.SEVERE, e.getMessage());
+				Logger.getLogger(Main.class.getName()).log(Level.SEVERE,
+						e.getMessage());
 				System.exit(-1);
 			}
 		}
-		
+
 		// 1. Parse Grammar
 		Grammar grammar = null;
 		try {
 			grammar = gp.parseGrammar(grammarFileName);
 		} catch (Exception e) {
-			Logger.getLogger( Main.class.getName() ).log(Level.SEVERE, e.getMessage());
+			Logger.getLogger(Main.class.getName()).log(Level.SEVERE,
+					e.getMessage());
 			System.exit(-1);
 		}
-		
+
 		// 2. Generate random poem
 		RandomPoemGenerator.generatePoem(grammar);
 	}
-	
+
 }

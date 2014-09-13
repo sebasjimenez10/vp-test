@@ -2,16 +2,36 @@ package com.grammar.poem.model;
 
 import java.util.List;
 
+/**
+ * Rule model. Holds grammar attributes
+ * @author sebastian
+ *
+ */
 public class Rule {
 
+	/**
+	 * Rule's name
+	 */
 	private String name;
+	
+	/**
+	 * Rule's value
+	 */
 	private String value;
+	
+	/**
+	 * Evaluable list of options
+	 */
 	private List<List<String>> evaluables;
 	
 	public Rule() {
 		// Constructor
 	}
 
+	/*
+	 * Getters and Setters
+	 */
+	
 	public String getName() {
 		return name;
 	}
