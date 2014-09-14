@@ -4,55 +4,56 @@ import java.util.List;
 
 /**
  * Rule model. Holds grammar attributes
+ * 
  * @author sebastian
  *
  */
 public class Rule {
 
-	/**
-	 * Rule's name
-	 */
-	private String name;
-	
-	/**
-	 * Rule's value
-	 */
-	private String value;
-	
-	/**
-	 * Evaluable list of options
-	 */
-	private List<List<String>> evaluables;
-	
-	public Rule() {
-		// Constructor
-	}
+    /**
+     * Rule's name
+     */
+    private String name;
 
-	/*
-	 * Getters and Setters
-	 */
-	
-	public String getName() {
-		return name;
-	}
+    /**
+     * Rule's value
+     */
+    private String value;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    /**
+     * Evaluable list of options
+     */
+    private List<List<String>> evaluables;
 
-	public String getValue() {
-		return value;
-	}
+    public Rule() {
+        // Constructor
+    }
 
-	public void setValue(String value) {
-		this.value = value;
-	}
+    /*
+     * Getters and Setters
+     */
 
-	public List<List<String>> getEvaluables() {
-		return evaluables;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setEvaluables(List<List<String>> evaluables) {
-		this.evaluables = evaluables;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public List<List<String>> getEvaluables() {
+        return evaluables;
+    }
+
+    public void setEvaluables(List<List<String>> evaluables) {
+        this.evaluables = evaluables;
+    }
 }
