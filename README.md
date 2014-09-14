@@ -73,18 +73,18 @@ his muddy field stands your field
 
 #### Program options
 
-1. You can execute the program with two options: ```-g``` AND ```-f:<file>```
-1.1. ```-g``` option is a flag that can be used to tell the program to print the grammar that is being used.
-1.2. ```-f:<file>``` is a option that can be used to change the grammar file for another one.
-1.3. Both options can be used simultaniously
+- You can execute the program with two options: ```-g``` AND ```-f:<file>```
+- ```-g``` option is a flag that can be used to tell the program to print the grammar that is being used.
+- ```-f:<file>``` is a option that can be used to change the grammar file for another one.
+- Both options can be used simultaniously
 
 Some examples:
 
-1.1. ```java -jar poem-1.0.jar -g```
-1.2. ```java -jar poem-1.0.jar -f:new.grammar```
-1.3. ```java -jar poem-1.0.jar -g -f:new.grammar```
+- ```java -jar poem-1.0.jar -g```
+- ```java -jar poem-1.0.jar -f:new.grammar```
+- ```java -jar poem-1.0.jar -g -f:new.grammar```
 
 #### Program Requirements
 
-1. The file ```poem.grammar``` must be in the same directoy as the ```.jar``` file to work by default
-2. If you want to provide a different grammar file please use the ```-f:<file>``` option
+- The file ```poem.grammar``` must be in the same directoy as the ```.jar``` file to work by default
+- If you want to provide a different grammar file please use the ```-f:<file>``` option
