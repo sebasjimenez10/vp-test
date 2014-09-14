@@ -51,7 +51,7 @@ her murky bright clear willow
 Instructions
 ---
 
-#### Previous to the solution:
+#### Installation:
 
 1. Open a terminal window
 2. Clone the repository somewhere in your pc using ```git clone https://github.com/sebasjimenez10/vp-test.git```
@@ -59,7 +59,7 @@ Instructions
 4. Use the following maven command to package the project into a ```.jar``` file: ```mvn package```
 5. After that, a ```poem-1.0.jar``` jar will be generated.
 
-#### Executing the program
+#### Execution:
 
 1. To execute the program you must type ```java -jar poem-1.0.jar``` in the terminal window
 2. A poem like this one will be generated:
@@ -71,7 +71,7 @@ pasture descends
 his muddy field stands your field
 ```
 
-#### Program options
+#### Program Options:
 
 - You can execute the program with two options: ```-g``` and ```-f:<file>```
 - ```-g``` option is a flag that can be used to tell the program to print the grammar that is being used.
@@ -84,12 +84,12 @@ Some examples:
 - ```java -jar poem-1.0.jar -f:new.grammar```
 - ```java -jar poem-1.0.jar -g -f:new.grammar```
 
-#### Program Requirements
+#### Program Requirements:
 
 - The file ```poem.grammar``` must be in the same directoy as the ```.jar``` file to work by default
 - If you want to provide a different grammar file please use the ```-f:<file>``` option
 
-#### Source folder structure
+#### Source folder structure:
 ```
 src/
 ├── main
@@ -121,7 +121,7 @@ src/
 17 directories, 8 files
 ```
 
-#### Technical Requirements
+#### Technical Requirements:
 
 This projects was developed using [Maven](http://maven.apache.org/), [Java 7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html), [JUnit](http://junit.org/), [Hamcrest](https://github.com/hamcrest), [Mockito](https://code.google.com/p/mockito/) and [Eclipse Luna](https://www.eclipse.org/)
 
