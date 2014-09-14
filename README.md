@@ -54,7 +54,7 @@ Solution
 #### Previous to the solution:
 
 1. Open a terminal
-2. Clone the repository somewhere in you pc using ```git clone http://github.com/sebasjimenez10/vp-test.git```
+2. Clone the repository somewhere in you pc using ```git clone https://github.com/sebasjimenez10/vp-test.git```
 3. Move into the new directory created using ```cd vp-test```
 4. Use the following maven command to package the project into a ```.jar``` file: ```mvn package```
 5. After that, a ```poem-1.0.jar``` jar will be generated.
@@ -74,15 +74,15 @@ his muddy field stands your field
 #### Program options
 
 1. You can execute the program with two options: ```-g``` AND ```-f:<file>```
-1.1 ```-g``` option is a flag that can be used to tell the program to print the grammar that is being used.
-1.2 ```-f:<file>``` is a option that can be used to change the grammar file for another one.
-1.3 Both options can be used simultaniously
+1.1. ```-g``` option is a flag that can be used to tell the program to print the grammar that is being used.
+1.2. ```-f:<file>``` is a option that can be used to change the grammar file for another one.
+1.3. Both options can be used simultaniously
 
 Some examples:
 
-1.1 ```java -jar poem-1.0.jar -g```
-1.2 ```java -jar poem-1.0.jar -f:new.grammar```
-1.3 ```java -jar poem-1.0.jar -g -f:new.grammar```
+1.1. ```java -jar poem-1.0.jar -g```
+1.2. ```java -jar poem-1.0.jar -f:new.grammar```
+1.3. ```java -jar poem-1.0.jar -g -f:new.grammar```
 
 #### Program Requirements
 
